@@ -78,6 +78,8 @@ public abstract class MonthView extends BaseMonthView {
         boolean isSelected = d == mCurrentItem;
         boolean hasScheme = calendar.hasScheme();
 
+        onDrawText(canvas, calendar, x, y, hasScheme, isSelected);
+
         if (hasScheme) {
             //标记的日子
             boolean isDrawSelected = false;//是否继续绘制选中的onDrawScheme
@@ -94,7 +96,6 @@ public abstract class MonthView extends BaseMonthView {
                 onDrawSelected(canvas, calendar, x, y, false);
             }
         }
-        onDrawText(canvas, calendar, x, y, hasScheme, isSelected);
     }
 
 
